@@ -5,6 +5,7 @@
 
 const messageBtn = document.querySelector("button");
 const output = document.querySelector(".output");
+output.setAttribute("style", "color: white; width: 200px; height: 100px; text-align: center;");
 
 messageBtn.addEventListener("click", showMessage);
 
