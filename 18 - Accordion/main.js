@@ -1,50 +1,17 @@
-const stars = document.querySelectorAll(".star");
-const output = document.querySelector(".output");
+const mainElements = document.querySelectorAll(".main");
+const contentElements = document.querySelectorAll(".content");
 
-for(let i = 0; i < stars.length; i++) {
-    stars[i].starValue = (i + 1);
-    //console.log(stars[i]);
-
-    ["mouseover","mouseout","click"].forEach(function(e) {
-        stars[i].addEventListener(e, starRate);
+for(let i = 0; i < mainElements.length; i++) {
+    //console.log(mainElements[i]);
+    mainElements[i].addEventListener("click", function() {
+        //console.log(mainElements[i].nextElementSibling);
+        clearActive();
+        mainElements[i].nextElementSibling.classList.toggle("active");
     });
 }
 
-function starRate(e) {
-    //console.log(this.starValue);
-    // console.log(e.type);
-    let t = e.type;
-    let starValue = this.starValue;
-
-    stars.forEach(function(ele, indexValue) {
-        //console.log(ele);
-        //console.log(ind);
-        if(t === "click") {
-            if(starValue > 1) {
-                output.innerHTML = "You rated this " + starValue + " stars";
-            }
-        }
-
-        if (t === "click") {
-            if(indexValue < starValue) {
-                ele.classList.add("orange");
-            } else {
-                ele.classList.remove("orange");
-            }
-        }
-
-        if (t === "mouseover") {
-            if(indexValue < starValue) {
-                ele.classList.add("yellow");
-            } else {
-                ele.classList.remove("yellow");
-            }
-        }
-
-        if (t === "mouseout") {
-            if(indexValue < starValue) {
-                ele.classList.remove("yellow");
-            }
-        }
-    });
+function clearActive() {
+    for(let i = 0; i < contentElements.length; i++) {
+        contentElements[i].classList.remove("active");
+    }
 }

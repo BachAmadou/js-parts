@@ -4,12 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion</title>
-     
+    <style>
+        .content {
+            display: none;
+            padding: 20px;
+            font-size: 0.8em;
+            border: 1px solid black;
+        }
+
+        .main {
+            font-size: 1.5em;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        .active {
+            display: block;
+        }
+    </style> 
 
 </head>
 <body>
-    <div><h2>Generate Dummy Text </h2></div>
-    <div>Simply click on your preferred dummy text to see it on the right side. You can increase/decrease the size of the text by the number of words or characters and/or divide the text into paragraphs. In advanced options, there are settings to adjust font family, font size, style and more.</div>
+    <div class="main"><h2>Generate Dummy Text 1 </h2></div>
+    <div class="content">Simply click on your preferred dummy text to see it on the right side. You can increase/decrease the size of the text by the number of words or characters and/or divide the text into paragraphs. In advanced options, there are settings to adjust font family, font size, style and more.</div>
+
+    <div class="main"><h2>Generate Dummy Text 2 </h2></div>
+    <div class="content">Simply click on your preferred dummy text to see it on the right side. You can increase/decrease the size of the text by the number of words or characters and/or divide the text into paragraphs. In advanced options, there are settings to adjust font family, font size, style and more.</div>
+
+    <div class="main"><h2>Generate Dummy Text 3 </h2></div>
+    <div class="content">Simply click on your preferred dummy text to see it on the right side. You can increase/decrease the size of the text by the number of words or characters and/or divide the text into paragraphs. In advanced options, there are settings to adjust font family, font size, style and more.</div>
     
 
     <script src="main.js"></script>
