@@ -5,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accordion</title>
     <style>
-        .content {
-            display: none;
-            padding: 20px;
-            font-size: 0.8em;
-            border: 1px solid black;
-        }
+       .tooltip {
+           color: blue;
+           background-color: #ddd;
+       }
 
-        .main {
-            font-size: 1.5em;
-            background-color: #ddd;
-            cursor: pointer;
-        }
+       .output {
+           display: none;
+           position: absolute;
+           border: 1px solid red;
+           background-color: black;
+           color: white;
+           padding: 5px;
+           top: 100px;
+           left: 50px;
+       }
 
-        .active {
-            display: block;
-        }
     </style> 
 
 </head>
 <body>
     <p>Generate Dummy Text <span class="tooltip" data-toolContent="The most learnt programming language">JavaScript</span> </p>
-
-
 
     <div>Simply click on your preferred dummy text to see it on the right side. You can <span class="tooltip" data-toolContent="It is really hard but doable">programming</span> the size of the text by the number of words or characters and/or divide d more.</div>
 
