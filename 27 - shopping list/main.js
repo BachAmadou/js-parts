@@ -57,6 +57,6 @@ function build() {
         row.appendChild(cell2);
         table.appendChild(row);
     }
-    console.log(table);
+    //console.log(table);
     output.appendChild(table);
 }
