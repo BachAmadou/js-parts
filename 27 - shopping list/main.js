@@ -12,7 +12,7 @@ btnAdd.addEventListener("click", () => {
     }
 });
 
-window.onload = build;
+window.onload = build; // same as document.addEventListener("DOMContentLoaded"...)
 
 function build() {
     output.innerHTML = "<h2>My List...</h2>";
