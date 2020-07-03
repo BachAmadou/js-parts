@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>Shopping list</title>
     <style>
-      
+      td span {
+        font-size: 0.8em;
+        color: red;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      td:first-child {
+        width: 250px;
+        overflow: hidden;
+      }
     </style>
 </head>
 <body>
 
-  <div class="myCal"></div>  
+  <input type="text" id="addItem">  
+  <input type="button" id="addNew" value="Add Item">
+  <div class="output"></div> 
+
   <script src="main.js"></script>
 
 </body>
