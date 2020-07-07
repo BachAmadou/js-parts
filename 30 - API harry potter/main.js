@@ -5,7 +5,17 @@
 
 const url = "http://hp-api.herokuapp.com/api/characters";
 const charactersList = document.querySelector("#charactersList");
+const searchBar = document.querySelector("#searchBar");
 let hpCharacters = [];
+
+searchBar.addEventListener("keyup", (e) => {
+    const searchChar = e.target.value.toLowerCase();
+    const filteredChar = hpCharacters.filter((character) => {
+        return (
+            character.name.toLowerCase().includes(searchChar) || character.house.toLowerCase().includes(searchChar));
+    });
+    showCharacters(filteredChar);
+});
 
 const loadCharacters = async () => {
     try {
