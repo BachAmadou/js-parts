@@ -1,42 +1,21 @@
-/*
-1. Get the characters of Harry Potter displayed from the API
-2. Create search to filter characters by name
-*/
+const jokeBtn = document.querySelector("#jokeBtn");
+const jokeText = document.querySelector("#jokeText");
+const url = "https://api.icndb.com/jokes/random";
 
-const url = "http://hp-api.herokuapp.com/api/characters";
-const charactersList = document.querySelector("#charactersList");
-const searchBar = document.querySelector("#searchBar");
-let hpCharacters = [];
+jokeBtn.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const response = await fetch(url);
+        const data = await response.json();
+        console.log(data.value.id);
+        //jokeText.innerHTML = data.value.joke;
 
-searchBar.addEventListener("keyup", (e) => {
-    const searchChar = e.target.value.toLowerCase();
-    const filteredChar = hpCharacters.filter((character) => {
-        return (
-            character.name.toLowerCase().includes(searchChar) || character.house.toLowerCase().includes(searchChar));
-    });
-    showCharacters(filteredChar);
+    // try {
+    //     const response = await fetch(url);
+    //     const data = await response.json();
+    //     console.log(data.value.id);
+    //     jokeText.innerHTML = data.value.joke;
+    // } 
+    // catch(err) {
+    //     console.error(err)
+    // }
 });
-
-const loadCharacters = async () => {
-    try {
-        const response = await fetch(url);
-        hpCharacters = await response.json();
-        showCharacters(hpCharacters);
-    } catch (err) {
-        console.error(err);
-    }
-}
-
-function showCharacters(characters) {
-    const words = characters.map((character) => {
-        return `
-        <li class="character">
-            <h2>${character.name}</h2>
-            <p>House: ${character.house}</p>
-            <img src="${character.image}"></img>
-        </li>`
-    }).join("");
-    charactersList.innerHTML = words;
-}
-
-loadCharacters();
